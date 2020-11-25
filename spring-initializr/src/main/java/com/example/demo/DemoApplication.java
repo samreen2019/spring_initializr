@@ -3,7 +3,6 @@ package com.example.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
@@ -24,8 +23,8 @@ public class DemoApplication {
 @RestController
 class GreetingController {
     
-    @RequestMapping("/hello")
+    @RequestMapping("/hello/{name}")
     String hello(@PathVariable String name) {
-        return "Hello World!";
+        return "Hello, " + name + "!";
     }
 }
