@@ -1,6 +1,6 @@
 FROM openjdk:8 AS builder
 COPY . /usr/src/spring-initializr
-WORKDIR /usr/src/reactive-backend
+WORKDIR /usr/src/spring-initializr
 RUN ./mvnw clean package
 
 FROM openjdk:8
