@@ -1,7 +1,7 @@
 FROM openjdk:14 AS builder
 COPY . /usr/src/reactive-backend
 WORKDIR /usr/src/reactive-backend
-RUN ls && ./mvnw clean package
+RUN ls && mvnw clean package
 
 FROM openjdk:14
 COPY --from=builder /usr/src/reactive-backend/target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/reactive-backend/
