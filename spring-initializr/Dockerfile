@@ -1,10 +1,10 @@
 FROM openjdk:8 AS builder
-COPY . /usr/src/reactive-backend
+COPY . /usr/src/spring-initializr
 WORKDIR /usr/src/reactive-backend
 RUN ./mvnw clean package
 
 FROM openjdk:8
-COPY --from=builder /usr/src/reactive-backend/target/reactive-web-1.0.0-SNAPSHOT.jar /usr/src/reactive-backend/
-WORKDIR /usr/src/reactive-backend
+COPY --from=builder /usr/src/spring-initializr/target/demo-0.0.1-SNAPSHOT.jar /usr/src/spring-initializr/
+WORKDIR /usr/src/spring-initializr
 EXPOSE 8080
-CMD ["java", "-jar", "reactive-web-1.0.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
