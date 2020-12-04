@@ -3,7 +3,7 @@ version: "2"
 services:
   spring-boot-reactive:
     build:
-      context: ../spring-initializr
+      context: ../spring-initializr_skeleton
     image: spring-initializr-tpd
     ports:
       - "8080:8080"
